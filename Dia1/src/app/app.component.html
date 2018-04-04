@@ -1,0 +1,23 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Ingresa valor:</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><input type="text" [(ngModel)]="name"></li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="container">
+  <div class="row center-block" align='center'>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Csharp_Logo.png/245px-Csharp_Logo.png" *ngIf="name === 'c#' "> 
+    <div align='center' *ngIf="name === 'Edgar' ">
+      Mi nombre es Edgar
+     </div><div align='center' *ngIf="name === '28' ">
+      Mi número favorito es el 28
+     </div>
+     <img src="https://images-gmi-pmc.edge-generalmills.com/cb5f971b-4174-4022-a117-467816c28c71.jpg" *ngIf="name === 'enchiladas' "> 
+  </div>
+</div>
