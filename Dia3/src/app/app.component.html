@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Calle</th>
+        <th scope="col">Codigo Postal</th>
+        <th scope="col">Razón Social</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let post of posts; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ post.calle }}</td>
+        <td>{{ post.codigopostal }}</td>
+        <td>{{ post.razonsocial }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
