@@ -1,0 +1,30 @@
+<form [formGroup]="registroForm">
+  <div class="form-group">
+    <label for="nombres">Nombres</label>
+    <input formControlName="nombres" type="text" class="form-control" id="nombres" placeholder="Nombres">
+    <div *ngIf="!registroForm.controls['nombres'].valid && registroForm.controls['nombres'].touched" class="alert alert-warning" role="alert">
+      Error en el campo de nombres
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="edad">Edad</label>
+    <input formControlName="edad" type="text" class="form-control" id="edad" placeholder="Edad">
+    <div *ngIf="!registroForm.controls['edad'].valid && registroForm.controls['edad'].touched" class="alert alert-warning" role="alert">
+      Error en el campo edad
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="genero">Género</label>
+    <select formControlName="genero" class="form-control" id="genero">
+      <option value="Masculino">Masculino</option>
+      <option value="Femenino">Femenino</option>  
+    </select>
+    <!--div *ngIf="!registroForm.controls['permiso'].valid && xFrom.controls['permiso'].touched" class="alert alert-warning" role="alert">
+      This is a danger alert—check it out!
+    </div-->
+  </div>
+  <div class="alert alert-danger" *ngIf="existe" role="alert">
+    Usuario ya existe
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="Enviar(registroForm.value)" [disabled]="!registroForm.valid">Enviar</button>
+</form>

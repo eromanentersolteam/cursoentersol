@@ -1,0 +1,56 @@
+<form [formGroup]="registroForm">
+  <div class="form-group">
+    <label for="nombres">Nombres</label>
+    <input formControlName="nombres" type="text" class="form-control" id="nombres" placeholder="Nombres">
+    <div *ngIf="!registroForm.controls['nombres'].valid && registroForm.controls['nombres'].touched" class="alert alert-warning" role="alert">
+      Error en el campo de nombres
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="ap_pat">Apellido paterno</label>
+    <input formControlName="ap_pat" type="text" class="form-control" id="ap_pat" placeholder="Apellido Paterno">
+    <div *ngIf="!registroForm.controls['ap_pat'].valid && registroForm.controls['ap_pat'].touched" class="alert alert-warning" role="alert">
+      Error en el campo apellido paterno
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="ap_mat">Apellido materno</label>
+    <input formControlName="ap_mat" type="text" class="form-control" id="ap_mat" placeholder="Apellido Materno">
+    <div *ngIf="!registroForm.controls['ap_mat'].valid && registroForm.controls['ap_mat'].touched" class="alert alert-warning" role="alert">
+      Error en el campo apellido materno
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="edad">Edad</label>
+    <input formControlName="edad" type="text" class="form-control" id="edad" placeholder="Edad">
+    <div *ngIf="!registroForm.controls['edad'].valid && registroForm.controls['edad'].touched" class="alert alert-warning" role="alert">
+      Error en el campo edad
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input formControlName="email" type="email" class="form-control" id="email" placeholder="Email">
+    <!--small id="email" class="form-text text-muted">We'll never share your email with anyone else.</small-->
+    <div *ngIf="!registroForm.controls['email'].valid && registroForm.controls['email'].touched" class="alert alert-warning" role="alert">
+      This is a danger alert—check it out!
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input formControlName="password" type="password" class="form-control" id="password" placeholder="Password">
+    <div *ngIf="!registroForm.controls['password'].valid && registroForm.controls['password'].touched" class="alert alert-warning" role="alert">
+      Error en el campo password
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="genero">Género</label>
+    <select formControlName="genero" class="form-control" id="genero">
+      <option value="Masculino">Masculino</option>
+      <option value="Femenino">Femenino</option>  
+    </select>
+    <!--div *ngIf="!registroForm.controls['permiso'].valid && xFrom.controls['permiso'].touched" class="alert alert-warning" role="alert">
+      This is a danger alert—check it out!
+    </div-->
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="Enviar(registroForm.value)" [disabled]="!registroForm.valid">Enviar</button>
+</form>
